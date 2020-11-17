@@ -25,7 +25,7 @@ object Main {
 
     val classpath = Array(
       "/home/tgodzik/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.2/scala-library-2.13.2.jar",
-      "/home/tgodzik/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/lamp/dotty-library_0.25/0.25.0-RC2/dotty-library_0.25-0.25.0-RC2.jar"
+      "/home/tgodzik/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3.0.0-M1/3.0.0-M1/scala3-library_3.0.0-M1-3.0.0-M1.jar"
     )
     val driver = new InteractiveDriver(
       List("-color:never", "-classpath", classpath.mkString(File.pathSeparator))
