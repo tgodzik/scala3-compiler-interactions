@@ -1,7 +1,6 @@
 val dottyVersion = "3.0.0-M1"
 
 
-val excludeSourcecode = ExclusionRule(organization = "com.lihaoyi", name = "sourcecode_2.13")
 lazy val root = project
   .in(file("."))
   .settings(
@@ -10,6 +9,6 @@ lazy val root = project
     scalaVersion := dottyVersion,
     libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test",
     libraryDependencies ++= List(
-      "ch.epfl.lamp" %% "dotty-compiler" % scalaVersion.value
+      "org.scala-lang" %% "scala3-compiler" % scalaVersion.value
     )
   )
