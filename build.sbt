@@ -21,9 +21,10 @@ lazy val scalameta = project
   .settings(
     name := "scalameta-parsing",
     scalaVersion := parserVersion,
-  testFrameworks := List(MUnitFramework),
+    resolvers += Resolver.sonatypeRepo("public"),
+    testFrameworks := List(MUnitFramework),
     libraryDependencies ++= List(
-      "org.scalameta" %% "scalameta" % "4.4.0",
+      "org.scalameta" %% "scalameta" % "4.4.0+21-c5c28796-SNAPSHOT",
       "org.scalameta" %% "munit" % "0.7.19" % Test,
       "com.lihaoyi" %% "pprint" % pprintVersion
     )

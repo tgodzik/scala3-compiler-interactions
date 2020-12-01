@@ -28,41 +28,19 @@ class ParserTests extends munit.FunSuite {
             Nil,
             Type.Name("A"),
             Nil,
-            Ctor.Primary(
-              Nil,
-              Name.Anonymous(),
-              Nil
-            ),
+            Ctor.Primary(Nil, Name(""), Nil),
             Template(
               Nil,
               Nil,
-              Self(
-                Name.Anonymous(),
-                None
-              ),
+              Self(Name(""), None),
               List(
                 Defn.Def(
                   Nil,
-                  Term.Name(
-                    "b"
-                  ),
+                  Term.Name("b"),
                   Nil,
                   Nil,
                   None,
-                  Term.Block(
-                    List(
-                      Term.Apply(
-                        Term.Name(
-                          "println"
-                        ),
-                        List(
-                          Lit.Int(
-                            1
-                          )
-                        )
-                      )
-                    )
-                  )
+                  Term.Apply(Term.Name("println"), List(Lit.Int(1)))
                 )
               )
             )
