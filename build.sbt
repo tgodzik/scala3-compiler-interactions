@@ -10,6 +10,7 @@ lazy val dotty = project
     name := "dotty-parsing",
     scalaVersion := dottyVersion,
     libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test",
+    libraryDependencies += "io.get-coursier" % "interface" % "1.0.1",
     libraryDependencies ++= List(
       "org.scala-lang" %% "scala3-compiler" % scalaVersion.value,
       "com.lihaoyi" %% "pprint" % pprintVersion

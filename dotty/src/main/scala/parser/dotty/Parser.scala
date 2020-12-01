@@ -5,20 +5,30 @@ import dotty.tools.dotc.util.SourceFile
 import dotty.tools.dotc.core.Contexts.Context
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.nio.file.Path
 import java.io.File
 import scala.collection.mutable.ListBuffer
 import scala.jdk.CollectionConverters._
+
+import coursierapi.Dependency
+import coursierapi.Fetch
 
 object Parser {
 
   def main(args: Array[String]): Unit = {
 
-    val classpath = Array(
-      "/home/tgodzik/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.2/scala-library-2.13.2.jar",
-      "/home/tgodzik/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3.0.0-M1/3.0.0-M1/scala3-library_3.0.0-M1-3.0.0-M1.jar"
-    )
+
+   
+    val fetch = Fetch.create()
+
+    fetch.addDependencies(Dependency.of("org.scala-lang", "scala3-library_3.0.0-M2", "3.0.0-M2"))
+    val extraLibraries: Seq[Path] = fetch
+      .fetch()
+      .asScala
+      .map(_.toPath()).toSeq
+
     val driver = new InteractiveDriver(
-      List("-color:never", "-classpath", classpath.mkString(File.pathSeparator))
+      List("-color:never", "-classpath", extraLibraries.mkString(File.pathSeparator))
     )
 
     val sourceCode = Files.readAllLines(Paths.get("./Source.stat")).asScala.mkString("\n")

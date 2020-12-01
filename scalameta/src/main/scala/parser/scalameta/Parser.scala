@@ -15,7 +15,7 @@ object Parser {
 
     implicit val dialect = scala.meta.dialects.Dotty
     val parsed = sourceCode.parse[Source]
-    pprint.log(parsed)
+    pprint.log(parsed.get)
   }
 
 

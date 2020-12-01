@@ -1,3 +1,2 @@
-class Hello:
-  def fn[T](a: T): Unit =
-    println("hello")
+enum Color extends Enum[Color] derives CanEqual;
+  case Red;
