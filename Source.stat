@@ -1,0 +1,3 @@
+class Hello:
+  def fn[T](a: T): Unit =
+    println("hello")
