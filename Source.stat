@@ -1,2 +1,5 @@
-enum Color extends Enum[Color] derives CanEqual;
-  case Red;
+def foo(xs: List[Int]) =
+  xs.map: x =>
+      x + 1
+    .filter: x =>
+      x > 0
